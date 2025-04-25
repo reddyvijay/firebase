@@ -23,6 +23,7 @@
         <button type="submit" class="login-button">Singup</button> 
   
         <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+        <p *ngIf="sucessMessage && !errorMessage" class="successAlert">{{sucessMessage}}</p>
 
   
       </form>
@@ -32,20 +33,3 @@
       </div>
     </div>
   </div>
-
-<!-- 
-
-<h2>Register</h2>
-<form (submit)="onSubmit()">
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" required />
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="password" required />
-    </div>
-    <button type="submit">Register</button>
-    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
-</form>
-<p>Already have an account? <a routerLink="/login">Login</a></p> -->

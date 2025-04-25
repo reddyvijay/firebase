@@ -12,6 +12,7 @@ export class SignupComponent {
   email: string = '';
   password: string = '';
   errorMessage = '';
+  sucessMessage = '';
 
   constructor(private supabaseService: SupabaseService, private router: Router,
     private toastr: ToastrService
@@ -28,8 +29,9 @@ export class SignupComponent {
     } else {
       console.log('Registration successful!', data);
       this.toastr.success('created successfully', 'Success!');
+      this.sucessMessage = 'Check your email to verify your account & Login after verify.'
 
-      this.router.navigate(['/login']); // Redirect to login after successful registration
+      // this.router.navigate(['/login']); // Redirect to login after successful registration
     }
   }
 }
